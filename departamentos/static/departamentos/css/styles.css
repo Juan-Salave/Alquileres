@@ -1,3 +1,6 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 .box1 {
   width: 100%;
@@ -16,8 +19,8 @@
   from{margin-left: 100%;}
   to{margin-left: 0%;}
 }
-
-.contenedor {
+/* Carrusel */
+.contenedor-carrusel {
     width: 100%;
     height: 500px;
     border: solid 2px var(--oscuro);
@@ -26,3 +29,31 @@
   a {
     text-decoration: none;
   }
+
+/* Contenedor */
+.contenedor-departamentos {
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+  }
+}
+@media (min-width: 960px) {
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+  }
+}
+

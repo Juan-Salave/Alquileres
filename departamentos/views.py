@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from .models import Departamento,Barrio
 
 def home(request):
-    return render(request, 'departamentos/home.html')
+    departamentos = Departamento.objects.all()
+    data = {
+        'departamentos':departamentos
+    }
+    return render(request, 'departamentos/home.html', data)

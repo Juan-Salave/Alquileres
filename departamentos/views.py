@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Departamento,Barrio
+from .models import Departamento
+from django.views.generic.detail import DetailView
 
 def home(request):
     departamentos = Departamento.objects.all()
@@ -7,3 +8,7 @@ def home(request):
         'departamentos':departamentos
     }
     return render(request, 'departamentos/home.html', data)
+
+class DepartamentoDetailView(DetailView):
+    model = Departamento
+    template_name = 'departamentos/departamento.html'

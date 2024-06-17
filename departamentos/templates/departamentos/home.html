@@ -3,7 +3,7 @@
 {% block contenido %}
 
 <!-- CARRUSEL -->
-    <div class="container py-5">
+    <!-- <div class="container-fluid">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -17,11 +17,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 <!-- PRODUCTOS -->
     <div class="contenedor-departamentos">
-        <h2 class="border-bottom border-bottomborder-bottom my-5">Alquileres en Buenos Aires</h2>
+        <h2 class="border-bottom my-5">Alquileres en Buenos Aires</h2>
 
         <div class="grid">
 
@@ -29,14 +29,15 @@
             
 
                 <div class="departamentos">
+                    <a href={% url 'Departamento' i.id %}>
+                        <img src="{{ i.imagenes.first.imagen.url }}" class="card-img-top rounded" alt="Depto">
                     
-                    <img src="{{ i.imagenes.first.imagen.url }}" class="card-img-top rounded" alt="Deptp_Recoleta">
-                    
-                    <div class="card-body">
-                        <h5 class="text-center bg-info text-light rounded">{{ i.titulo1 }}</h5>
-                        <p class="card-text fw-lighter">{{ i.descripcion1 }}</p>                    
-                    </div>
-
+                        <div class="card-body">
+                            <h5 class="text-center bg-info text-light rounded">{{ i.titulo1 }}</h5>
+                            <p class="card-text text-dark fw-lighter">{{ i.descripcion1 }}</p>
+                                       
+                        </div>
+                    </a>
                 </div>
             
             {% endfor %}

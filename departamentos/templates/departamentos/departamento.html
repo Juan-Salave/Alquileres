@@ -1,0 +1,30 @@
+{% extends 'departamentos/base.html' %}
+{% load static %}
+{% block contenido %}
+
+
+<div class="contenedor-departamentos">
+    <h1>{{ object.nombre }}</h1>
+
+    <div class="">
+        {% comment %} <img src="{{ object.imagenes.first.imagen.url }}" class="card-img-top rounded" alt="Depto"> {% endcomment %}
+
+        {% for i in object.imagenes.all %}
+            <img src="{{ i.imagen.url }}" alt="" width="200">
+        {% endfor %}
+
+        <div class="">
+            <p>
+                {{ object.descripcion2 }}
+                <p class="">  Precio :{{ object.moneda}} {{ object.precio }}</p>
+            </p>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

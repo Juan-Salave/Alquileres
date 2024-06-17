@@ -9,20 +9,17 @@
 
         <div class="grid">
 
-            {% for i in departamentos %}
-            
+            {% for i in departamentos %}            
                 <div class="departamentos">
                     <a href={% url 'Departamento' i.id %}>
                         <img src="{{ i.imagenes.first.imagen.url }}" class="card-img-top rounded" alt="Depto">
                     
                         <div class="card-body">
-                            <h5 class="text-dark mt-2">{{ i.titulo1 }} | {{ i.barrio }}</h5>
-                            <p class="card-text text-dark fw-lighter">{{ i.descripcion1 }}</p>
-                                       
+                            <h5 class="text-dark mt-2 mb-0">{{ i.titulo1 }} | {{ i.barrio }}</h5>
+                            <p class="card-text text-dark fw-lighter mb-4">{{ i.descripcion1 }}</p>                                       
                         </div>
                     </a>
                 </div>
-
             {% endfor %}
         </div>
     </div>

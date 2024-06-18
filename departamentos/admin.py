@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Barrio, Departamento, ImagenDepartamentos, Moneda
+from .models import Barrio, Departamento, ImagenDepartamentos, Moneda, Location
 
 class ImagenDepartamentosAdmmin(admin.TabularInline):           # Clase para incluir img en linea 1 + 1 + 1 
     model = ImagenDepartamentos
@@ -18,3 +18,5 @@ admin.site.register(Barrio)
 admin.site.register(Moneda)
 admin.site.register(Departamento, DepartamentosAdmin)           # Visibles en el Admin
 admin.site.register(ImagenDepartamentos)
+admin.site.register(Location)
+

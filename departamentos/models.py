@@ -33,7 +33,18 @@ class ImagenDepartamentos(models.Model):
     imagen        = models.ImageField(upload_to="producto")
     departamento  = models.ForeignKey(Departamento, on_delete=models.CASCADE, related_name="imagenes")  
     
+class Location(models.Model):
+    name        = models.CharField(max_length=50)
+    direccion   = models.CharField(max_length=50)
+    lat         = models.FloatField(verbose_name='Latitud')
+    lng         = models.FloatField(verbose_name='Longitud')
+    class Meta:
 
+        verbose_name_plural ='Ubicacion'
+        ordering            = ['direccion']
+           
+    def __str__(self):
+        return self.name 
      
     
 # falta colocar y aptualizar el admin

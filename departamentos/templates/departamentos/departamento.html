@@ -11,18 +11,96 @@
 
         {% for i in object.imagenes.all %}
             <img src="{{ i.imagen.url }}" alt="" width="200">
-        {% endfor %}
-
-        <div class="">
-            <p>
-                {{ object.descripcion2 }}
-                <p class="">  Precio :{{ object.moneda}} {{ object.precio }}</p>
-            </p>
-
-
-        </div>
+        {% endfor %}       
     </div>
 </div>
+
+<!-- DESCRICCION -->    
+<div class="container col-10 mt-3">
+    <div class="row">
+        <div class="col-lg-7">
+            <div>
+                <h2>{{ object.barrio }}<span class="h4 fw-lighter"> {{object.titulo2}}</span></h2>
+                <p class="h6 fw-lighter mb-5">{{ object.direccion }}</p>
+            </div>
+        
+            <div class="row gx-2 mt-4">
+  
+                <h2 class='mb-3'>Resumen</h2>
+          
+                <div class="col-sm pb-1">
+                    <div class="card bg-info">
+                        <p class="fw-lighter text-center">Habitaciones</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="float-end pb-3" src="{% static 'departamentos/img/iconos/dormitorio.png'%}" alt="" width="45px">
+                            </div>
+                            <div class="col-3">
+                                <p class="h4 text-center mt-2">{{ object.habitaciones }}</p>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+
+                <div class="col-sm pb-1">
+                    <div class="card bg-info">
+                        <p class="fw-lighter text-center">Baños</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="float-end pb-3" src="{% static 'departamentos/img/iconos/banio.png'%}" alt="" width="45px">
+                            </div>
+                            <div class="col-3">
+                                <p class="h4 text-center mt-2">{{ object.banios }}</p>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+
+                <div class="col-sm pb-1">
+                    <div class="card bg-info">
+                        <p class="fw-lighter text-center">Huéspedes</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="float-end pb-3" src="{% static 'departamentos/img/iconos/personas.webp'%}" alt="" width="45px">
+                            </div>
+                            <div class="col-3">
+                                <p class="h4 text-center mt-2">{{ object.huespedes }}</p>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+
+                <div class="col-sm pb-1">
+                    <div class="card bg-info">
+                        <p class="fw-lighter text-center">Mts2</p>
+                        <div class="row">
+                            <div class="col-5">
+                                <img class="float-end pb-3" src="{% static 'departamentos/img/iconos/mts2.webp'%}" alt="" width="45px">
+                            </div>
+                            <div class="col-3">
+                                <p class="h4 text-center mt-2 px-0">{{ object.area }}</p>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+
+            </div>
+  
+            <div class="pt-4">
+                <h2>Descripción<span class="h6 fw-lighter"> CONTRATO DE 2 AÑOS.</span></h2>
+                <p>{{ object.descripcion2 }}</p>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div>
+                <img class="mx-auto d-block pt-5" src="{% static 'departamentos/img/iconos/obelisco.png'%}" alt="instagram" width="400px">
+            </div>
+        </div>
+
+    </div>           
+</div>
+
 
 
 
